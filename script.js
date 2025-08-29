@@ -48,7 +48,7 @@ for (let i=0; i<calls.length;i++) {
             let contain=document.getElementById('history');
             let div=document.createElement('div');
             div.innerHTML=`
-                <div class="w-[16.4rem] flex items-center justify-between rounded-[0.5rem] bg-[rgba(250,250,250,1)] p-[1rem]">
+                <div class="w-[16.4rem] deletebtn flex items-center justify-between rounded-[0.5rem] bg-[rgba(250,250,250,1)] p-[1rem]">
                     <div>
                         <p class="text-[0.8rem] font-semibold text-[rgba(17,17,17,1)]">${data.name}</p>
                         <p class="text-[0.8rem] font-normal text-[rgba(92,92,92,1)]">${data.number}</p>
@@ -63,5 +63,9 @@ for (let i=0; i<calls.length;i++) {
         }
     });
 }
+document.getElementById('clear').addEventListener('click',function clear() {
+let divs = document.querySelectorAll('.deletebtn');
+    divs.forEach(div=>div.remove());
+});
 
 
